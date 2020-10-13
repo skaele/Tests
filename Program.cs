@@ -16,17 +16,9 @@ namespace MTC
 
             Console.WriteLine();
 
-            foreach (var item in IndexOfValue(list, value)) Console.WriteLine(item);
-        }
+            list.RemoveAll(a => a == value);
 
-        private static List<int> IndexOfValue(List<int> list, int value) 
-        {
-            List<int> output = new List<int>();
-            for (int index = 0; index < list.Count; index++)
-            {
-                if (list[index] == value) output.Add(index);
-            }
-            return output;
+            foreach (var item in list) Console.WriteLine(item);
         }
     }
 }
